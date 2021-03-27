@@ -1,6 +1,13 @@
-fin = open('ride.in', 'r')
-fout = open('ride.out', 'w')
-x, y = map(int, fin.readline().split())
+"""
+ID: thanhti1
+LANG: PYTHON3
+TASK: test
+"""
+with open('test.in', 'r') as fin:
+    raw_line = fin.readline()
+
+x, y = map(int, raw_line.split())
 sum = x + y
-fout.write(str(sum) + '\n')
-fout.close()
+
+with open('test.out', 'w') as fout:
+    fout.write(str(sum) + '\n')

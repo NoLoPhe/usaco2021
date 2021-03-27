@@ -4,11 +4,11 @@ LANG: PYTHON3
 TASK: ride
 """
 
-fin = open('ride.in', 'r')
-fout = open('ride.out', 'w')
+with open('ride.in', 'r') as fin:
+    raw_line = fin.readlines()
 
-line_a = fin.readline().replace('\n','')
-line_b = fin.readline().replace('\n','')
+line_a = raw_line.pop(0).strip()
+line_b = raw_line.pop(0).strip()
 
 def hask(line):
     result = 1
@@ -17,8 +17,11 @@ def hask(line):
     result %= 47
     return result
 
+out = ''
 if hask(line_a) == hask(line_b):
-    fout.write('GO\n')
+    out='GO\n'
 else:
-    fout.write('STAY\n')
-fout.close()
+    out='STAY\n'
+
+with open('ride.out', 'w') as fout:
+    fout.write(out)

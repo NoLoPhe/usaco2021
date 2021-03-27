@@ -4,11 +4,11 @@ LANG: PYTHON3
 TASK: beads
 """
 
-fin=open('beads.in','r')
-fout=open('beads.out','w')
+with open('beads.in', 'r') as fin:
+    raw_line = fin.readlines()
 
-n = int(fin.readline())
-A = list(fin.readline().replace('\n',''))
+n = int(raw_line.pop(0).strip())
+A = list(raw_line.pop(0).strip().replace('\n',''))
 
 A = [' '] + A + A + [' ']
 left = [[0,0] for i in range(len(A))] #[r,b]
@@ -36,14 +36,11 @@ for i in range(1,len(A)-1):
         right[i][0] = right[i + 1][0] + 1
         right[i][1] = right[i + 1][1] + 1
 
-# print(left)
-# print(right)
-
 ans=0
 for i in range(1,len(A)-1):
     ans=max(ans,max(left[i][0], left[i][1]+right[i+1][0], left[i][0]+right[i+1][1], right[i+1][1]))
 ans=min(ans,n)
 
-fout.write(str(ans) + '\n')
-fout.close()
+with open('beads.out', 'w') as fout:
+    fout.write(str(ans) + '\n')
 
