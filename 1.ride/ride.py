@@ -18,7 +18,7 @@ def hask(line):
     return result
 
 if hask(line_a) == hask(line_b):
-    fout.write('G\n')
+    fout.write('GO\n')
 else:
     fout.write('STAY\n')
 fout.close()
