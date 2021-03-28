@@ -5,10 +5,8 @@ TASK: ride
 """
 
 with open('ride.in', 'r') as fin:
-    raw_line = fin.readlines()
-
-line_a = raw_line.pop(0).strip()
-line_b = raw_line.pop(0).strip()
+    line_a = fin.readline().strip()
+    line_b = fin.readline().strip()
 
 def hask(line):
     result = 1
@@ -17,7 +15,6 @@ def hask(line):
     result %= 47
     return result
 
-out = ''
 if hask(line_a) == hask(line_b):
     out='GO\n'
 else:
