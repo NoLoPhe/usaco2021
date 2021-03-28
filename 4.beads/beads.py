@@ -4,7 +4,7 @@ LANG: PYTHON3
 TASK: beads
 """
 
-# code1 O(2n)
+# code1 O(n)
 with open('beads.in', 'r') as fin:
     n = int(fin.readline().strip())
     A = list(fin.readline().strip())
@@ -91,7 +91,7 @@ with open('beads.out', 'w') as fout:
 # Test 8: TEST OK [0.025 secs, 9328 KB]
 # Test 9: TEST OK [0.025 secs, 9312 KB]
 
-# #code3 O(2n)
+# #code3 O(n^2)
 # with open('beads.in', 'r') as fin:
 #     n = int(fin.readline().strip())
 #     A = list(fin.readline().strip())
